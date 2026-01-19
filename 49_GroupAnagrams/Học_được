@@ -1,0 +1,10 @@
+int arr[];         // ❌ Không hợp lệ
+int arr[4];        // ✅ Phải chỉ rõ nếu không khởi tạo
+
+
+sizeof của mảng sẽ khác với sizeof con trỏ
+=> sizeof con trỏ trả về 4 hoặc 8
+=> sizeof của mảng trả về tổng số byte các phần tử có trong nó
+
+
+XEM XÉT VIỆC SỬ DỤNG ENUM => BỞI VÌ ENUM => CHIẾM 4 BYTE TRONG BỘ NHỚ

@@ -1,0 +1,33 @@
+Một câu hỏi tuyệt vời đấy, Le. Dưới đây là những lỗi định dạng (format) phổ biến mà nhiều lập trình viên thường gặp khi viết mã C, đặc biệt là với một chương trình phức tạp như của bạn:
+
+### 🔹 Các lỗi format phổ biến:
+
+1. **Không căn dòng đồng nhất**
+   - Ví dụ: Một số dòng sử dụng 4 khoảng trắng, số khác lại dùng tab.
+   - Cách khắc phục: Chọn dùng tab hoặc space, và cấu hình trình soạn thảo để tự động căn chỉnh (auto-indent).
+
+2. **Đóng mở ngoặc không rõ ràng**
+   - `if (...)` hoặc `for (...)` không có `{}` dù chứa nhiều câu lệnh → dễ gây lỗi logic.
+   - Gợi ý: Luôn dùng dấu `{}` kể cả khi chỉ có một câu lệnh.
+
+3. **Dòng code quá dài**
+   - Gây khó đọc và khó bảo trì.
+   - Cách khắc phục: Ngắt dòng khi hàm hoặc biểu thức quá dài (trên 80–100 ký tự).
+
+4. **Comment không đồng bộ và thiếu dấu cách**
+   - Ví dụ: `//Comment` thay vì `// Comment`
+   - Tạo cảm giác vội vàng và thiếu chuyên nghiệp.
+
+5. **Tách dòng không hợp lý giữa các khối logic**
+   - Đôi khi các đoạn code dính liền nhau mà không có dòng trống để phân tách ý nghĩa.
+
+6. **Đặt tên không thống nhất**
+   - Tên biến camelCase lẫn lộn với snake_case trong cùng một tệp.
+   - Nên chọn 1 kiểu đặt tên và giữ nguyên tắc trong toàn bộ dự án.
+
+7. **Khai báo biến không nhóm theo khối**
+   - Ví dụ: Khai báo biến ở rải rác khắp hàm → khó theo dõi.
+
+Nếu bạn muốn, mình có thể giúp bạn cấu hình `.clang-format` hoặc gợi ý cài đặt các plugin format tự động như **clangd**, **EditorConfig**, hay cách sử dụng **VS Code Formatter**.
+
+Bạn đang dùng trình soạn thảo nào? Hay bạn muốn mình gợi ý cách định dạng đúng trong môi trường bạn đang code?

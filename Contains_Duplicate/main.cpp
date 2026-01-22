@@ -113,6 +113,7 @@ int main(int argc, char **argv) {
     //::testing::InitGoogleTest(&argc, argv);
     //return RUN_ALL_TESTS(); // Chạy toàn bộ các TEST trên
 
+    //TODO: mai clear phần này
     unordered_map<uint32_t, dummy> dictory;
     //dummy intance1(8);
     dictory.insert(std::move(make_pair<uint32_t, dummy>(3, std::move(dummy(8)))));

@@ -4,6 +4,10 @@ Example 1:
 
 Input: nums = [1, 2, 3, 3]
 
+1 2 1 3
+
+1 2 
+
 Output: true
 
 Example 2:

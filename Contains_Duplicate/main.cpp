@@ -41,6 +41,19 @@ public:
         return true;
     }
 
+    //Solution 3: check lenght
+    bool hasDuplicate(vector<int> nums) {
+        if(nums.size() == 0) return false;
+        // add array và set
+        // Nếu độ lớn của set khác vector thì sai vì trùng thì set bỏ phần tử đó đi
+        
+        unordered_set<int> v(nums.begin(), nums.end());
+        if(v.size() != nums.size())
+            return false;
+
+        return true;
+    }
+
 
 };
 

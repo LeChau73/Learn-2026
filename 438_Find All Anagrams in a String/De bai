@@ -17,3 +17,15 @@ Explanation:
 The substring with start index = 0 is "ab", which is an anagram of "ab".
 The substring with start index = 1 is "ba", which is an anagram of "ab".
 The substring with start index = 2 is "ab", which is an anagram of "ab".
+
+Solution của mình:
+Tạo ra hashmap cho p;
+
+duyệt từng phần tử trong s: Nếu từng phần tử trong s có trong map của p thì bằng đầu tìm các phần tử 
+còn lại trong đó
+
+n(p)
+
+n(s) * (2n(p))
+
+n^2 LÀ TRƯỜNG HỢP TỆ NHẤT

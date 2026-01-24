@@ -49,7 +49,7 @@ bool compareBoth(char s[], char t[])
 }
 
 
-
+// abc abc
 
 bool isAnagram(char* s, char* t) {
     

@@ -14,6 +14,7 @@ bool isAnagram(char* s, char* t) {
     int arr[26];
 
     int j = 0;
+    
     while(s[j] != '\0') {
         arr[s[j] - 'a']++;
         arr[t[j] - 'a']--;

@@ -16,7 +16,7 @@ int* findAnagrams(char* s, char* p, int* returnSize) {
 
     int arr[26] = {0};
 
-    int *containIndex = (int*)malloc(sizeof(int) * 26);
+    int *containIndex = (int*)malloc(sizeof(int) * strlen(s));
 
     // Create hash table for p
     for(int i = 0; i < lenght; i++) {
@@ -38,7 +38,7 @@ int* findAnagrams(char* s, char* p, int* returnSize) {
             if (count_match == lenght)
             {
                 // match rồi thì save lại và chuyển qua index mới
-                containIndex[count_match++] = start_window;
+                containIndex[(*returnSize)++] = start_window;
                 count_match = end_window - start_window;        //index
                 arr[s[start_window] - 'a']++;
                 start_window++;
@@ -52,26 +52,31 @@ int* findAnagrams(char* s, char* p, int* returnSize) {
             // BUG: Không thể phân chia được đâu là  a b e và b a b => mai debug thêm
             if(count_match > 0)
             {
-                arr[s[end_window] - 'a']++;
-
-                if(arr[s[end_window] - 'a'] >= 0) {
-                    //Trùng
-                    start_window++;
-
-                } else {
-                    for (size_t i = start_window; i < end_window; i++)
-                    {
-                        arr[s[i] - 'a']++;
-                    }
-                    count_match = 0;
+                for (size_t i = start_window; i < end_window; i++)
+                {
+                    arr[s[i] - 'a']++;
+                    if(arr[s[i] - 'a'] == 0)
+                        start_window = i+1;
                 }
 
-                
+                if(arr[s[end_window] - 'a'] == -1) {
+                    // tức là tại vị trí này ký tự đang k có trong hash
+                        // Không có trong hash thì xoá trạng thái đang ở trong quá trình match anagram
+                        count_match = 0;
+                } else {
+                    //Nếu == 0 hay > 0 tức là ký tự hiện tại match với case nằm trong nó
+                    for (size_t i = start_window; i < end_window; i++)
+                    {
+                        arr[s[i] - 'a']--;
+                    }
+                    count_match = end_window - start_window + 1;
+                }
+
             }
         }
     }
 
-
+    return containIndex;
 
 }
 
@@ -79,13 +84,13 @@ int* findAnagrams(char* s, char* p, int* returnSize) {
 
 int main() {
 
-    char* s =  "cbaebabacd";
+    char* s =  "abaacbabc";
     char* p =  "abc";
     int size;
     int* kq = findAnagrams(s, p, &size);
-    printf(" { ");
+    printf("Size = %d { ", size);
     for(int i = 0; i < size; i++)
-        printf(", %d ", kq[i]);
+        printf(" %d ,", kq[i]);
 
      printf(" } \n");
 

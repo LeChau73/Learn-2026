@@ -21,10 +21,10 @@ int* findAnagrams(char* s, char* p, int* returnSize) {
     while(s[tail] != '\0')
     {
         //printf("%d \n", )
-        table[s[tail] - 97]--;  //Đưa ký tự hiện tại vào table
-        if ((table[s[tail] - 97]) >= 0) //Nếu mà match với table
+        table[s[tail] - 97]--;  // Đưa ký tự hiện tại vào table
+        if ((table[s[tail] - 97]) >= 0) // Nếu mà match với table
         {   
-            if ((tail - head + 1) == p_count)   //Nếu mà match hết
+            if ((tail - head + 1) == p_count)   // Nếu mà match hết
             {
                 ans[(*returnSize)] = head;
                 (*returnSize)++;
